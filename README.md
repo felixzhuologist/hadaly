@@ -5,9 +5,9 @@
 2. Install python modules
 `pip install -r requirements.txt`
 3. Install node modules
-`node install`
+`npm install`
 4. Bundle files
-`node run dev` (or `node run prod`)
+`npm run dev` (or `npm run prod`)
 5. run server
 `python app.py`
 
