@@ -61,9 +61,13 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	var _TopNav = __webpack_require__(160);
+
+	var _TopNav2 = _interopRequireDefault(_TopNav);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Home = function Home(props) {
+	function Home() {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
@@ -75,7 +79,7 @@
 	  );
 	};
 
-	_reactDom2.default.render(_react2.default.createElement(Home, null), document.querySelector('.root'));
+	_reactDom2.default.render(_react2.default.createElement(_TopNav2.default, null), document.querySelector('.container'));
 
 /***/ },
 /* 2 */
@@ -19677,6 +19681,56 @@
 
 	module.exports = __webpack_require__(4);
 
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = TopNav;
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function TopNav() {
+	  return _react2.default.createElement(
+	    "nav",
+	    { className: "navbar navbar-default" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "container-fluid" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "navbar-header navbar-left" },
+	        _react2.default.createElement(
+	          "a",
+	          { className: "navbar-brand", href: "#" },
+	          "Some Name"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "ul",
+	        { className: "nav navbar-nav navbar-right" },
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "#fakelink" },
+	            "Features"
+	          )
+	        )
+	      )
+	    )
+	  );
+	}
 
 /***/ }
 /******/ ]);
