@@ -61,26 +61,22 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _reactTapEventPlugin = __webpack_require__(160);
-
-	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
-
 	var _Main = __webpack_require__(165);
 
 	var _Main2 = _interopRequireDefault(_Main);
 
+	var _reactTapEventPlugin = __webpack_require__(160);
+
+	var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Our custom react component
-
-	//Needed for onTouchTap
-	//Can go away when react 1.0 release
-	//Check this repo:
-	//https://github.com/zilverline/react-tap-event-plugin
 	(0, _reactTapEventPlugin2.default)();
 
-	// Render the main app react component into the app div.
-	// For more details see: https://facebook.github.io/react/docs/top-level-api.html#react.render
+	// Needed for onTouchTap can go away when react 1.0 release
+	// Check this repo: https://github.com/zilverline/react-tap-event-plugin
+
+
 	_reactDom2.default.render(_react2.default.createElement(_Main2.default, null), document.getElementById('app'));
 
 /***/ },
