@@ -8,11 +8,20 @@ module.exports = {
   },
   module: {
     loaders: [
+      // ES6 javascript, jsx
       {
         test: /\.jsx?$/, 
         exclude: /node_modules/, 
         loaders: ['babel-loader'],
+      },
+      // SASS
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
       }
     ]
+  },
+  eslint: {
+    configFile: '.eslintrc',
   },
 }
