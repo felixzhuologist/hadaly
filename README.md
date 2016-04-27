@@ -15,3 +15,11 @@ This automatically enters the virtual environment and sets the app config to the
 `python app.py`
 
 To exit virtual env, `deactivate`
+
+### contributing:
+Add heroku remotes:
+`git remote add pro git@heroku.com:hadaly-pro.git`
+`git remote add stage git@heroku.com:hadaly-stage.git`
+Now push code with:
+`git push pro master`
+`git push stage master`
