@@ -9,7 +9,7 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 
 # db setup
 db = SQLAlchemy(app)
-from models import Company
+from models import *
 
 
 @app.route('/')

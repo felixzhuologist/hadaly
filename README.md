@@ -29,5 +29,5 @@ To make migrations:
 `python manage.py db migrate`
 To apply migrations (after creating or pulling new migrations)
 `python manage.py db upgrade`
-Similarly, to migrate on heroku:
+Similarly, to apply migrations on heroku:
 `heroku run python manage.py db upgrade --app [hadaly-stage/hadaly-pro]`
