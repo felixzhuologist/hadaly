@@ -23,3 +23,11 @@ Add heroku remotes:
 Now push code with:
 `git push pro master`
 `git push stage master`
+
+### migrations:
+To make migrations:
+`python manage.py db migrate`
+To apply migrations (after creating or pulling new migrations)
+`python manage.py db upgrade`
+Similarly, to migrate on heroku:
+`heroku run python manage.py db upgrade --app [hadaly-stage/hadaly-pro]`
