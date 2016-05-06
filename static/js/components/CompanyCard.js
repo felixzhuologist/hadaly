@@ -4,7 +4,6 @@ import Card from 'material-ui/lib/card/card';
 import CardActions from 'material-ui/lib/card/card-actions';
 import CardHeader from 'material-ui/lib/card/card-header';
 import CardMedia from 'material-ui/lib/card/card-media';
-import CardTitle from 'material-ui/lib/card/card-title';
 import FlatButton from 'material-ui/lib/flat-button';
 import CardText from 'material-ui/lib/card/card-text';
 
@@ -13,10 +12,16 @@ const CompanyCard = ({company, position, description}) => (
     <CardHeader
       title={company}
       subtitle={position}
+      avatar='http://i.imgur.com/HNauxCQ.png?1'
+      actAsExpander={true}
+      showExpandableButton={true}
     />
     <CardText>
       {description}
     </CardText>
+    <CardActions expandable={true}>
+      <FlatButton label="apply here" />
+    </CardActions>
   </Card>
 )
 
