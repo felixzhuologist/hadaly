@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import AppRow from '../AppRow'
+import CompanyCard from '../CompanyCard'
 import Card from 'material-ui/lib/card/card';
 
 const googleInfo = {
@@ -22,5 +23,5 @@ const rowInfo = {
 
 storiesOf('Companies', module)
   .add('draft', () => (
-    <AppRow {...rowInfo}/>
+    <CompanyCard {...googleInfo}/>
   ))
