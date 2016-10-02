@@ -10,34 +10,15 @@ import CardText from 'material-ui/lib/card/card-text';
 import FontIcon from 'material-ui/lib/font-icon';
 import Call from 'material-ui/lib/svg-icons/communication/call';
 
-const styles = {
-  img: {
-    maxHeight: '100px',
-    maxWidth: '100px'
-  }
-}
-const CompanyCard = ({company, position, description}) => (
-  <Card>
-    <CardMedia
-      overlay={<CardTitle title={company}/>}
-    >
-      <img style={styles.img} src='http://i.imgur.com/HNauxCQ.png?1' />
-    </CardMedia>
-    <CardTitle title={position}/>
-    <CardText>
-      {description}
-      <Call />
-    </CardText>
-    <CardActions expandable={true}>
-      <FlatButton label="apply here" />
-    </CardActions>
+const CompanyCard = ({company, position}) => (
+  <Card className="node" >
+    <CardTitle title={company} subtitle={position} />
   </Card>
 )
 
 CompanyCard.PropTypes = {
   company: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
-  description: PropTypes.string
+  position: PropTypes.string.isRequired
 }
 
 export default CompanyCard

@@ -5,7 +5,7 @@ import CardHeader from 'material-ui/lib/card/card-header';
 import CardText from 'material-ui/lib/card/card-text';
 
 const StageCard = ({ stageName, date, description }) => (
-  <Card>
+  <Card className="node" >
     <CardHeader
       title={stageName}
       subtitle={date}
