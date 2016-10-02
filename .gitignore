@@ -10,3 +10,6 @@ venv
 
 # Specific files
 README.html
+
+# compiled files
+static/dist/app.js
