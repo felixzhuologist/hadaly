@@ -11,4 +11,5 @@ body {
 .node {
   max-height: 150px;
   max-width: 200px;
+  text-overflow: ellipsis;
 }
