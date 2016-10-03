@@ -10,15 +10,17 @@ import CardText from 'material-ui/lib/card/card-text';
 import FontIcon from 'material-ui/lib/font-icon';
 import Call from 'material-ui/lib/svg-icons/communication/call';
 
-const CompanyCard = ({company, position}) => (
+const CompanyCard = ({company, position, date}) => (
   <Card className="node" >
     <CardTitle title={company} subtitle={position} />
+    <CardText> Applied {date} </CardText>
   </Card>
 )
 
 CompanyCard.PropTypes = {
   company: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired
+  position: PropTypes.string.isRequired,
+  date: PropTypes.string
 }
 
 export default CompanyCard

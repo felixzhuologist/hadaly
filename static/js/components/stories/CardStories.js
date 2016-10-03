@@ -13,6 +13,7 @@ import PendingCard from '../PendingCard'
 const googleInfo = {
   company: 'Google',
   position: 'Software Engineer (New Grad)',
+  date: 'September 20th, 2016'
 }
 
 const phoneScreenInfo = {
@@ -22,12 +23,12 @@ const phoneScreenInfo = {
 }
 
 const rowInfo = {
-  'firstCard': googleInfo,
+  'companyCard': googleInfo,
   'restCards': [phoneScreenInfo]
 }
 
 storiesOf('Company Card', module)
-  .add('Just title', () => (
+  .add('Applied', () => (
     <CompanyCard {...googleInfo} />
   ))
 
@@ -38,14 +39,19 @@ storiesOf('Stage Card', module)
 
 storiesOf('Pending Card', module)
   .add('Pending', () => (
-    <PendingCard props={{ days_elapsed: 10 }} />
+    <PendingCard days_elapsed="10" />
   ))
 
 storiesOf('End Card', module)
   .add('Offer', () => (
-    <OfferCard props={{ deadline: 'December 30th, 2016' }} />
+    <OfferCard deadline="December 30th, 2016" />
   ))
   .add('No Offer', () => (
     <NoOfferCard />
+  ))
+
+storiesOf('Row', module)
+  .add('Screen + Offer', () => (
+    <AppRow {...rowInfo} />
   ))
 
