@@ -1,18 +1,22 @@
+import Radium from 'radium';
 import React from 'react';
 import TopNav from './TopNav';
 import Landing from './Landing';
 
 const styles = {
   container: {
-    height: '100%',
+    '@media only screen and (max-width: 450px)': {
+      width: '100%',
+      height: '100vh'
+    },
+
+    background: '#FF4136'
   },
 };
 
 const Home = () => (
   <div style={styles.container}>
-    <TopNav/>
-    <Landing/>
   </div>
 );
 
-export default Home;
+export default Radium(Home);

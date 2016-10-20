@@ -22,6 +22,7 @@
   "homepage": "https://github.com/felixzhuologist/hadaly",
   "dependencies": {
     "material-ui": "^0.15.0-alpha.2",
+    "radium": "^0.18.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
@@ -37,6 +38,7 @@
     "babel-preset-react": "^6.5.0",
     "eslint": "^3.7.0",
     "eslint-plugin-react": "^6.3.0",
+    "radium": "^0.18.1",
     "webpack": "^1.12.14"
   }
 }
