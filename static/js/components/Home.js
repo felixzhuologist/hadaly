@@ -2,8 +2,7 @@ import Radium from 'radium';
 import React from 'react';
 import TopNav from './TopNav';
 import Landing from './Landing';
-
-import FlatButton from 'material-ui/lib/flat-button';
+import AddJobModal from './AddJobModal';
 
 const styles = {
   container: {
@@ -16,7 +15,7 @@ const styles = {
 
 const Home = () => (
   <div style={styles.container}>
-    <FlatButton label="Add new job" />
+    <AddJobModal />
   </div>
 );
 

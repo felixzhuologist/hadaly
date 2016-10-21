@@ -22,6 +22,7 @@
   "homepage": "https://github.com/felixzhuologist/hadaly",
   "dependencies": {
     "material-ui": "^0.15.0-alpha.2",
+    "node-uuid": "^1.4.7",
     "radium": "^0.18.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
