@@ -1,6 +1,7 @@
 import React from 'react';
 import Dialog from 'material-ui/lib/dialog';
 import FlatButton from 'material-ui/lib/flat-button';
+import TextField from 'material-ui/lib/text-field';
 
 class AddJobModal extends React.Component {
   constructor(props) {
@@ -43,7 +44,12 @@ class AddJobModal extends React.Component {
           open={this.state.open}
           onRequestClose={this.handleClose}
         >
-          TODO: Add inputs
+          <div>
+            Company Name: <TextField hintText="Hooli"/><br />
+            Job Title: <TextField hintText="Innovation Engineer"/><br />
+            URL: <TextField hintText="http://www.hooli.xyz/jobs/swe"/><br />
+            Contact: <TextField hintText="gbels@hoolimail.xyz"/><br />
+          </div>
         </Dialog>
       </div>
     );
