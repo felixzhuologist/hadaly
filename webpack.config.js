@@ -14,11 +14,6 @@ module.exports = {
         exclude: /node_modules/, 
         loaders: ['babel-loader'],
       },
-      // SASS
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
-      }
     ]
   },
   eslint: {
