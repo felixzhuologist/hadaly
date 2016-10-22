@@ -2,7 +2,7 @@ import Radium from 'radium';
 import React from 'react';
 import TopNav from './TopNav';
 import Landing from './Landing';
-import AddJobModal from './AddJobModal';
+import AddJobModalContainer from './AddJobModalContainer';
 
 const styles = {
   container: {
@@ -15,7 +15,7 @@ const styles = {
 
 const Home = () => (
   <div style={styles.container}>
-    <AddJobModal />
+    <AddJobModalContainer />
   </div>
 );
 

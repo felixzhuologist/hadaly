@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 
 module.exports = {
+  devtool: 'source-map',
   entry: [
     'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
@@ -8,6 +9,7 @@ module.exports = {
   ],
   output: {
     path: __dirname + '/static/dist',
+    publicPath: 'http://localhost:3000/scripts',
     filename: 'app.js',
   },
   module: {
@@ -17,6 +19,7 @@ module.exports = {
         test: /\.jsx?$/, 
         exclude: /node_modules/, 
         loaders: ['babel-loader'],
+        include: path.join(__dirname, 'scripts'),
       },
     ]
   },

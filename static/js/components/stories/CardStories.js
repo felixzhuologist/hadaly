@@ -53,8 +53,8 @@ storiesOf('End Card', module)
 storiesOf('Row', module)
   .add('Screen + Offer', () => (
     <div>
-    <AppRow {...rowInfo} />
-    <AppRow {...rowInfo} />
+      <AppRow {...rowInfo} />
+      <AppRow {...rowInfo} />
     </div>
   ))
 
