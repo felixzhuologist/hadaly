@@ -1,12 +1,12 @@
-export const googleInfo = {
-  id: "1",
-  company: 'Google',
-  position: 'Software Engineer (New Grad)',
-  app_url: "goo.gl/Nzba59",
-  recruiter: "jkeigley@google.com",
-  notes: "",
-  date: 'September 20th, 2016',
-  stages: ["1", "2"],
+export const haventApplied = {
+  id: "2",
+  company: 'Rigetti Computing',
+  position: 'Software Engineer',
+  app_url: '',
+  recruiter: '',
+  notes: '',
+  date: '',
+  stages: [],
 }
 
 export const phoneScreenInfo = {
@@ -25,6 +25,18 @@ export const onsiteInfo = {
   date: '5.12.16',
   time: '10:30',
   description: 'two technical + lunch + two technical',
+}
+
+export const googleInfo = {
+  id: "1",
+  company: 'Google',
+  position: 'Software Engineer (New Grad)',
+  app_url: "goo.gl/Nzba59",
+  recruiter: "jkeigley@google.com",
+  notes: "",
+  profile: "https://www.seeklogo.net/wp-content/uploads/2015/09/new-google-favicon-logo.png",
+  date: 'September 20th, 2016',
+  stages: [phoneScreenInfo, onsiteInfo],
 }
 
 export const byId = {"1": googleInfo}
