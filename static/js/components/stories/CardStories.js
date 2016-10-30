@@ -8,33 +8,16 @@ import StageCard from '../StageCard'
 import OfferCard from '../OfferCard'
 import NoOfferCard from '../NoOfferCard'
 import PendingCard from '../PendingCard'
-
-
-const googleInfo = {
-  company: 'Google',
-  position: 'Software Engineer (New Grad)',
-  date: 'September 20th, 2016'
-}
-
-const phoneScreenInfo = {
-  'stageName': 'Phone Screen with John',
-  'date': 'Feb 29th, 2016',
-  'description': 'Quick 1 hour technical phone screen.'
-}
-
-const rowInfo = {
-  'companyCard': googleInfo,
-  'restCards': [phoneScreenInfo]
-}
+import * as api from '../../api'
 
 storiesOf('Company Card', module)
   .add('Applied', () => (
-    <CompanyCard {...googleInfo} />
+    <CompanyCard {...api.googleInfo} />
   ))
 
 storiesOf('Stage Card', module)
   .add('Phone Screen', () => (
-    <StageCard {...phoneScreenInfo} />
+    <StageCard {...api.phoneScreenInfo} />
   ))
 
 storiesOf('Pending Card', module)
@@ -53,8 +36,8 @@ storiesOf('End Card', module)
 storiesOf('Row', module)
   .add('Screen + Offer', () => (
     <div>
-      <AppRow {...rowInfo} />
-      <AppRow {...rowInfo} />
+      <AppRow {...api.rowInfo} />
+      <AppRow {...api.rowInfo} />
     </div>
   ))
 
