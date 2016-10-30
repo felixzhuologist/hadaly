@@ -19,7 +19,6 @@ module.exports = {
         test: /\.jsx?$/, 
         exclude: /node_modules/, 
         loaders: ['babel-loader'],
-        include: path.join(__dirname, 'scripts'),
       },
     ]
   },
