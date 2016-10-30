@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 import job from './job';
 
-const byId = (state = {}, action) => {
+const jobsById = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_JOB':
+    case 'ADD_STAGE':
       return {
         ...state,
         [action.id]: job(state[action.id], action),
@@ -13,7 +14,7 @@ const byId = (state = {}, action) => {
   }
 };
 
-const allIds = (state = [], action) => {
+const allJobIds = (state = [], action) => {
   switch (action.type) {
     case 'ADD_JOB':
       return [...state, action.id];
@@ -23,11 +24,11 @@ const allIds = (state = [], action) => {
 };
 
 const jobs = combineReducers({
-  byId,
-  allIds
+  jobsById,
+  allJobIds
 });
 
 export default jobs;
 
 const getAllJobs = (state) =>
-  state.allIds.map(id => state.byId[id]);
+  state.allJobIds.map(id => state.jobsById[id]);
