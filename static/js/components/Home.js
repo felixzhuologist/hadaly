@@ -3,6 +3,8 @@ import React from 'react';
 import TopNav from './TopNav';
 import Landing from './Landing';
 import AddJobModalContainer from './AddJobModalContainer';
+import CompanyCard from './CompanyCard';
+import * as api from '../api'
 
 const styles = {
   container: {
@@ -16,6 +18,7 @@ const styles = {
 const Home = () => (
   <div style={styles.container}>
     <AddJobModalContainer />
+    <CompanyCard {...api.googleInfo} />
   </div>
 );
 

@@ -5,9 +5,8 @@ import FontIcon from 'material-ui/lib/font-icon';
 let styles = {
   container: {
     display: 'flex',
-    width: '250px',
-    height: '150px',
-    backgroundColor: 'black'
+    width: '100%',
+    height: '70px',
   },
   timeline: {
     width: '30%',
@@ -18,43 +17,56 @@ let styles = {
     height: '100%'
   },
   icon: {
-    height: '30%',
-    width: '100%',
-    backgroundColor: 'red'
+    height: '70%',
+    width: '18%',
+    margin: 'auto',
   },
   line: {
-    height: '70%',
+    height: '30%',
     width: '100%',
-    backgroundColor: 'blue'
   },
   title: {
     width: '100%',
-    height: '50%',
-    backgroundColor: 'green'
+    height: '25%',
+    fontSize: '16',
+    marginTop: '10%'
   },
   subtitle: {
-    width: '100%',
+    width: '95%',
     height: '25%',
-    backgroundColor: 'yellow'
+    fontSize: '12',
+    marginLeft: '5px'
+  },
+  strip: {
+    width: '3%',
+    height: '100%',
+    margin: 'auto',
+    backgroundColor: 'grey'
+  },
+  para: {
+    margin: 0
   }
 }
 
 const StageRow = (props) => {
-  let icon = <FontIcon className="material-icons">phone</FontIcon>
+  let icon = <FontIcon style={{top: '50%'}} className="material-icons">phone</FontIcon>
   return (
     <div style={styles.container} className="stage-row-container">
       <div style={styles.timeline} className="stage-row-timeline">
         <div style={styles.icon} className="stage-row-icon">
+          {icon}
         </div>
         <div style={styles.line} className="stage-row-line">
-          <div className="stripe">
+          <div style={styles.strip} className="stripe">
           </div>
         </div>
       </div>
       <div style={styles.text} className="stage-row-text">
         <div style={styles.title} className="stage-row-title">
+          <p style={styles.para} > Phone interview with John </p>
         </div>
         <div style={styles.subtitle} className="stage-row-subtitle">
+          <p style={styles.para} > Received response in 9 days </p>
         </div>
       </div>
     </div>
