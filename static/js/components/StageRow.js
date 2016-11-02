@@ -48,8 +48,17 @@ let styles = {
   }
 }
 
+let stage_type_to_icon = {
+  Phone: "phone",
+  Onsite: "flight_takeoff"
+}
+
 const StageRow = (props) => {
-  let icon = <FontIcon style={{top: '50%'}} className="material-icons">phone</FontIcon>
+  console.log(props)
+  console.log(stage_type_to_icon[props.type])
+  let icon = <FontIcon style={{top: '50%'}} className="material-icons">
+                {stage_type_to_icon[props.type]}
+              </FontIcon>
   return (
     <div style={styles.container} className="stage-row-container">
       <div style={styles.timeline} className="stage-row-timeline">
