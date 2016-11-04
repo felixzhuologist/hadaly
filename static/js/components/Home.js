@@ -1,7 +1,5 @@
 import Radium from 'radium';
 import React from 'react';
-import TopNav from './TopNav';
-import Landing from './Landing';
 import AddJobModalContainer from './AddJobModalContainer';
 import CompanyCard from './CompanyCard';
 import * as api from '../api'

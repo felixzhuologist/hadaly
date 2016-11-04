@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { StyleRoot } from 'radium';
 import Home from './components/Home';
 import configureStore from './configureStore';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import { Provider } from 'react-redux';
 
 // Needed for onTouchTap can go away when react 1.0 release
@@ -15,7 +16,9 @@ export const store = configureStore();
 ReactDOM.render(
   <StyleRoot>
     <Provider store={store}>
-      <Home />
+      <MuiThemeProvider>
+        <Home />
+      </MuiThemeProvider>
     </Provider>
   </StyleRoot>,
   document.getElementById('app')

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import { ListItem } from 'material-ui/lib/lists';
-import FontIcon from 'material-ui/lib/font-icon';
+import { ListItem } from 'material-ui/List';
+import FontIcon from 'material-ui/FontIcon';
 
 const styles = {
   container: {
@@ -49,7 +49,6 @@ const styles = {
 }
 
 const StageRow = ({ iconName, stageTitle, timeSubtitle }) => {
-  console.log(iconName)
   return (
     <div style={styles.container} className="stage-row-container">
       <div style={styles.timeline} className="stage-row-timeline">

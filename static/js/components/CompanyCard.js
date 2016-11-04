@@ -1,16 +1,16 @@
 import React, { PropTypes } from 'react';
-import Card from 'material-ui/lib/card/card';
-import CardActions from 'material-ui/lib/card/card-actions';
-import CardHeader from 'material-ui/lib/card/card-header';
-import FlatButton from 'material-ui/lib/flat-button';
-import CardTitle from 'material-ui/lib/card/card-title';
-import CardText from 'material-ui/lib/card/card-text';
-import Divider from 'material-ui/lib/divider';
-import FontIcon from 'material-ui/lib/font-icon';
-import IconButton from 'material-ui/lib/icon-button';
-import IconMenu from 'material-ui/lib/menus/icon-menu';
-import MenuItem from 'material-ui/lib/menus/menu-item';
-import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
+import {Card, 
+        CardActions,
+        CardHeader,
+        CardTitle,
+        CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import Divider from 'material-ui/Divider';
+import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
+import MenuItem from 'material-ui/MenuItem';
+import IconMenu from 'material-ui/IconMenu';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import StageRow from './StageRow';
 import { getPresentationProps } from '../reducers/stages';
 

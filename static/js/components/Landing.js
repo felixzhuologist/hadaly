@@ -1,5 +1,5 @@
 import React from 'react';
-import {cyanA700} from 'material-ui/lib/styles/colors';
+import {cyanA700} from 'material-ui/styles/colors';
 
 const styles = {
   container: {
