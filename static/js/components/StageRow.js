@@ -2,7 +2,7 @@ import React from 'react';
 import { ListItem } from 'material-ui/lib/lists';
 import FontIcon from 'material-ui/lib/font-icon';
 
-let styles = {
+const styles = {
   container: {
     display: 'flex',
     width: '100%',
@@ -48,14 +48,13 @@ let styles = {
   }
 }
 
-let stage_type_to_icon = {
+const stage_type_to_icon = {
   Phone: "phone",
   Onsite: "flight_takeoff"
 }
 
 const StageRow = (props) => {
   console.log(props)
-  console.log(stage_type_to_icon[props.type])
   let icon = <FontIcon style={{top: '50%'}} className="material-icons">
                 {stage_type_to_icon[props.type]}
               </FontIcon>
@@ -72,7 +71,7 @@ const StageRow = (props) => {
       </div>
       <div style={styles.text} className="stage-row-text">
         <div style={styles.title} className="stage-row-title">
-          <p style={styles.para} > Phone interview with John </p>
+          <p style={styles.para} > {props.type + " interview"} </p>
         </div>
         <div style={styles.subtitle} className="stage-row-subtitle">
           <p style={styles.para} > Received response in 9 days </p>

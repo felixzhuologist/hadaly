@@ -61,8 +61,8 @@ class CompanyCard extends React.Component {
         </IconButton>       
       </div>
 
-    let stages = this.state.expanded ?
-      <StageRow /> :
+    let stages = this.state.expanded && this.state.stages.length > 0 ?
+      this.state.stages.map(stage => <StageRow {...stage} />) :
       null
 
     return (
@@ -87,6 +87,7 @@ CompanyCard.PropTypes = {
   company: PropTypes.string.isRequired,
   position: PropTypes.string.isRequired,
   date: PropTypes.string,
+  stages: PropTypes.array,
 }
 
 export default CompanyCard
