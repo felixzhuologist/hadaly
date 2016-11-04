@@ -8,7 +8,9 @@ import CardText from 'material-ui/lib/card/card-text';
 import Divider from 'material-ui/lib/divider';
 import FontIcon from 'material-ui/lib/font-icon';
 import IconButton from 'material-ui/lib/icon-button';
-import {List} from 'material-ui/lib/lists';
+import IconMenu from 'material-ui/lib/menus/icon-menu';
+import MenuItem from 'material-ui/lib/menus/menu-item';
+import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import StageRow from './StageRow';
 
 class CompanyCard extends React.Component {
@@ -55,11 +57,22 @@ class CompanyCard extends React.Component {
         <FlatButton label={!this.state.expanded ? 
                           "view steps (" + this.state.stages.length + ")" :
                           "hide steps"} 
-                    onTouchTap={() => console.log("")} />
+                    onTouchTap={() => this.handleToggle()} />
         <IconButton style={{float: 'right'}} onTouchTap={() => this.handleToggle()} >
           {footerAction}
         </IconButton>       
       </div>
+
+    let dropDown = 
+    <IconMenu
+      iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+      anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+      targetOrigin={{horizontal: 'right', vertical: 'top'}}
+      style={{position: 'absolute', top: '5px', right: '10px'}}
+    >
+      <MenuItem primaryText="Edit" />
+      <MenuItem primaryText="Delete" />
+    </IconMenu>
 
     let stages = this.state.expanded && this.state.stages.length > 0 ?
       this.state.stages.map(stage => <StageRow {...stage} />) :
@@ -72,7 +85,7 @@ class CompanyCard extends React.Component {
         onExpandChange={this.handleExpandChange} >
         <CardHeader
           avatar={this.state.profile}
-          title={this.state.position}
+          title={<div className="title"> {this.state.position} {dropDown} </div>}
           subtitle={this.state.company}
         />
         <Divider />
