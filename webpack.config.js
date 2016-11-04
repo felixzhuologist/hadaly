@@ -3,8 +3,8 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
+    // 'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
+    // 'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     './static/js/app.js'
   ],
   output: {
@@ -21,7 +21,12 @@ module.exports = {
         loader: 'babel-loader',
         query: {
                   presets: ['es2015', 'es2016', 'es2017', 'react'],
-                  plugins: ['transform-runtime', 'transform-decorators-legacy', 'transform-class-properties'],
+                  plugins: [
+                    'transform-runtime', 
+                    'transform-decorators-legacy', 
+                    'transform-class-properties',
+                    "transform-es2015-template-literals",
+                  ],
         },
       },
     ]
@@ -29,7 +34,7 @@ module.exports = {
   eslint: {
     configFile: '.eslintrc',
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  // plugins: [
+  //   new webpack.HotModuleReplacementPlugin()
+  // ]
 }
