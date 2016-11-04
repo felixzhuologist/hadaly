@@ -9,6 +9,12 @@ export const haventApplied = {
   stages: [],
 }
 
+export const ApplyInfo = {
+  id: "0",
+  type: "Applied Online",
+  date: '9.12.16',
+}
+
 export const phoneScreenInfo = {
   id: "1",
   type: "Phone",
