@@ -12,4 +12,4 @@ venv
 README.html
 
 # compiled files
-static/dist/app.js
+static/dist/*
