@@ -1,9 +1,7 @@
 import React, { PropTypes } from 'react';
 import {Card, 
         CardActions,
-        CardHeader,
-        CardTitle,
-        CardText} from 'material-ui/Card';
+        CardHeader} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Divider from 'material-ui/Divider';
 import FontIcon from 'material-ui/FontIcon';
