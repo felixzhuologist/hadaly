@@ -9,8 +9,8 @@ import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
 import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import StageRow from './StageRow';
-import { getPresentationProps } from '../reducers/stages';
+import StageRow from '../StageRow';
+import { getPresentationProps } from '../../reducers/stages';
 
 class CompanyCard extends React.Component {
 
@@ -49,6 +49,7 @@ class CompanyCard extends React.Component {
     let cardFooter = this.state.stages.length == 0 ?
       <CardActions>
         <FlatButton label="apply" onTouchTap={() => console.log("")} />
+        <FlatButton label="update" onTouchTap={() => console.log("")} />
       </CardActions>
       :
       <div style={{padding: '10px'}}>

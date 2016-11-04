@@ -28,10 +28,12 @@ const stages = combineReducers({
   allStageIds
 });
 
-const getAllStages = (state) =>
-  state.allStageIds.map(id => state.stagesById[id]);
+export const getStagesForJob = (state, jobId) => {
+  let stageIds = state.jobs.jobsById[jobId].stages
+  return stageIds.map(id => getPresentationProps(state.stages.stagesById[id]))
+}
 
-export const getPresentationProps = (stages) => {
+const getPresentationProps = (stages) => {
   return stages.map(stage => ({
     stageTitle: getStageTitle(stage),
     timeSubtitle: getStageSubtitle(stage),
@@ -39,5 +41,7 @@ export const getPresentationProps = (stages) => {
     key: stage.id,
   }))
 }
+
+const getAllStages = (state) => state.allStageIds.map(id => state.stagesById[id]);
 
 export default stages;

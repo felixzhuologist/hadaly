@@ -1,8 +1,8 @@
 import Radium from 'radium';
 import React from 'react';
-import AddJobModalContainer from './AddJobModalContainer';
-import CompanyCard from './CompanyCard';
-import * as api from '../api'
+import AddJobModalContainer from '../AddJobModalContainer';
+import CompanyCard from '../CompanyCard';
+import * as api from '../../api'
 
 const styles = {
   container: {
@@ -13,10 +13,10 @@ const styles = {
   },
 };
 
-const Home = () => (
+const Home = ({ jobIds }) => (
   <div style={styles.container}>
+    {jobIds.map(jobId => <CompanyCard jobId={jobId} key={jobId} />)}
     <AddJobModalContainer />
-    <CompanyCard {...api.googleInfo} />
   </div>
 );
 

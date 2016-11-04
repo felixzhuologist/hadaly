@@ -4,7 +4,7 @@ const job = (state, action) => {
       return {
         id: action.stageId,
         company: action.company,
-        title: action.title,
+        position: action.title,
         url: action.url,
         contact: action.contact,
         notes: action.notes,
