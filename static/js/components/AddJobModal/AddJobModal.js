@@ -8,7 +8,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 class AddJobModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.defaultState = {
       open: false,
       company: '',
       title: '',
@@ -19,6 +19,7 @@ class AddJobModal extends React.Component {
       companyUntouched: true,
       titleUntouched: true
     };
+    this.state = this.defaultState
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,8 +37,12 @@ class AddJobModal extends React.Component {
     if (this.state.company !== '' && this.state.title !== '') {
       this.props.onSubmit(this.state);
       this.handleClose();
+      this.setState(this.defaultState);
     } else {
-      this.setState({companyUntouched: false, titleUntouched: false});
+      this.setState({
+        companyUntouched: false, 
+        titleUntouched: false
+      });
     }
   };
 
