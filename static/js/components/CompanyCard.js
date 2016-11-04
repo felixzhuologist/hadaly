@@ -12,6 +12,7 @@ import IconMenu from 'material-ui/lib/menus/icon-menu';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import StageRow from './StageRow';
+import { getPresentationProps } from '../reducers/stages';
 
 class CompanyCard extends React.Component {
 
@@ -35,7 +36,6 @@ class CompanyCard extends React.Component {
   };
 
   handleToggle = () => {
-    console.log("???")
     if (this.state.expanded == true) {
       this.handleReduce()
     } else {
@@ -48,7 +48,7 @@ class CompanyCard extends React.Component {
       <FontIcon className="material-icons">expand_more</FontIcon> :
       <FontIcon className="material-icons">expand_less</FontIcon>
 
-    let cardFooter = this.state.length == 0 ?
+    let cardFooter = this.state.stages.length == 0 ?
       <CardActions>
         <FlatButton label="apply" onTouchTap={() => console.log("")} />
       </CardActions>
@@ -58,7 +58,8 @@ class CompanyCard extends React.Component {
                           "view steps (" + this.state.stages.length + ")" :
                           "hide steps"} 
                     onTouchTap={() => this.handleToggle()} />
-        <IconButton style={{float: 'right'}} onTouchTap={() => this.handleToggle()} >
+        <IconButton style={{float: 'right'}} 
+                    onTouchTap={() => this.handleToggle()} >
           {footerAction}
         </IconButton>       
       </div>
@@ -75,7 +76,7 @@ class CompanyCard extends React.Component {
     </IconMenu>
 
     let stages = this.state.expanded && this.state.stages.length > 0 ?
-      this.state.stages.map(stage => <StageRow {...stage} />) :
+      getPresentationProps(this.state.stages).map(stage => <StageRow {...stage} />) :
       null
 
     return (

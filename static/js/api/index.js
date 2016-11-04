@@ -11,25 +11,33 @@ export const haventApplied = {
 
 export const ApplyInfo = {
   id: "0",
-  type: "Applied Online",
-  date: '9.12.16',
+  type: "ONLINE",
+  date: new Date(2016, 8, 12),
+  responseDate: new Date(2016, 8, 14),
+}
+
+export const recruiterInfo = {
+  id: "5",
+  type: "RECRUITER",
+  date: new Date(2016, 7, 1),
 }
 
 export const phoneScreenInfo = {
   id: "1",
-  type: "Phone",
+  type: "PHONE",
   interviewer: 'John',
-  date: '13.10.16',
+  date: new Date(2016, 9, 13),
+  responseDate: new Date(2016, 9, 16),
   time: '8:30',
   description: 'Quick 1 hour technical phone screen.',
 }
 
 export const onsiteInfo = {
   id: "2",
-  type: "Onsite",
+  type: "ONSITE",
   interviewers: [],
-  date: '5.12.16',
-  time: '10:30',
+  date: new Date(2016, 11, 5),
+  responseDate: null,
   description: 'two technical + lunch + two technical',
 }
 
@@ -42,7 +50,7 @@ export const googleInfo = {
   notes: "",
   profile: "https://www.seeklogo.net/wp-content/uploads/2015/09/new-google-favicon-logo.png",
   date: 'September 20th, 2016',
-  stages: [phoneScreenInfo, onsiteInfo],
+  stages: [recruiterInfo, phoneScreenInfo, onsiteInfo],
 }
 
 export const byId = {"1": googleInfo}

@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import stage from './stage'
+import {getStageTitle, getStageSubtitle, stage_type_to_icon} from './stagePresentation'
 
 const stagesById = (state = {}, action) => {
   switch (action.type) {
@@ -29,5 +30,14 @@ const stages = combineReducers({
 
 const getAllStages = (state) =>
   state.allStageIds.map(id => state.stagesById[id]);
+
+export const getPresentationProps = (stages) => {
+  return stages.map(stage => ({
+    stageTitle: getStageTitle(stage),
+    timeSubtitle: getStageSubtitle(stage),
+    iconName: stage_type_to_icon[stage.type], 
+    key: stage.id,
+  }))
+}
 
 export default stages;
