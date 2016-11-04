@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addJob } from '../actions/jobs';
+import { addJob } from '../../actions/jobs';
 import AddJobModal from './AddJobModal';
 
 const mapStateToProps = (state, ownProps) => ({

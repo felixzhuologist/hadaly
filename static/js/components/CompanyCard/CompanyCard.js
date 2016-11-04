@@ -42,11 +42,11 @@ class CompanyCard extends React.Component {
   }
 
   render() {
-    let footerAction = !this.state.expanded ?
+    const footerAction = !this.state.expanded ?
       <FontIcon className="material-icons">expand_more</FontIcon> :
       <FontIcon className="material-icons">expand_less</FontIcon>
 
-    let cardFooter = this.state.stages.length == 0 ?
+    const cardFooter = this.state.stages.length == 0 ?
       <CardActions>
         <FlatButton label="apply" onTouchTap={() => console.log("")} />
         <FlatButton label="update" onTouchTap={() => console.log("")} />
@@ -63,7 +63,7 @@ class CompanyCard extends React.Component {
         </IconButton>       
       </div>
 
-    let dropDown = 
+    const dropDown = 
     <IconMenu
       iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
       anchorOrigin={{horizontal: 'right', vertical: 'top'}}
@@ -74,15 +74,25 @@ class CompanyCard extends React.Component {
       <MenuItem primaryText="Delete" />
     </IconMenu>
 
-    let stages = this.state.expanded && this.state.stages.length > 0 ?
+    const stages = this.state.expanded && this.state.stages.length > 0 ?
       getPresentationProps(this.state.stages).map(stage => <StageRow {...stage} />) :
       null
+
+    const styles = {
+      cardStyles: {
+        width: '92%', 
+        margin: 'auto', 
+        marginTop: '3%', 
+        marginBottom: '3%'
+      }
+    }
 
     return (
       <Card 
         className="node" 
         expanded={this.state.expanded} 
-        onExpandChange={this.handleExpandChange} >
+        onExpandChange={this.handleExpandChange}
+        style={styles.cardStyles} >
         <CardHeader
           avatar={this.state.profile}
           title={<div className="title"> {this.state.position} {dropDown} </div>}

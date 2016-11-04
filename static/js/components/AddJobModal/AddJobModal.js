@@ -2,6 +2,8 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 class AddJobModal extends React.Component {
   constructor(props) {
@@ -52,9 +54,19 @@ class AddJobModal extends React.Component {
         onTouchTap={this.handleSubmit} />
     ]
 
+    const floatingButtonStyles = {
+      position: 'fixed',
+      bottom: '15%',
+      left: '50%',
+      transform: 'translate(-50%)'
+    }
+
     return (
       <div>
-        <FlatButton label="Add new job" onTouchTap={this.handleOpen} />
+        <FloatingActionButton style={floatingButtonStyles} 
+                              onTouchTap={this.handleOpen} >
+          <ContentAdd />
+        </FloatingActionButton>
         <Dialog
           title="Add New Job"
           actions={actions}

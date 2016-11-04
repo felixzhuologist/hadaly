@@ -1,11 +1,11 @@
 import Radium from 'radium';
 import React from 'react';
-import AddJobModalContainer from '../AddJobModalContainer';
+import AddJobModal from '../AddJobModal';
 import CompanyCard from '../CompanyCard';
 import * as api from '../../api'
 
 const styles = {
-  container: {
+  outerContainer: {
     '@media only screen and (max-width: 450px)': {
       width: '100%',
       height: '100vh',
@@ -14,9 +14,9 @@ const styles = {
 };
 
 const Home = ({ jobIds }) => (
-  <div style={styles.container}>
+  <div style={styles.outerContainer}>
     {jobIds.map(jobId => <CompanyCard jobId={jobId} key={jobId} />)}
-    <AddJobModalContainer />
+    <AddJobModal />
   </div>
 );
 
