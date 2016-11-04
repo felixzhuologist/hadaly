@@ -48,7 +48,8 @@ class CompanyCard extends React.Component {
 
     const cardFooter = this.state.stages.length == 0 ?
       <CardActions>
-        <FlatButton label="apply" 
+        <FlatButton label="apply"
+                    disabled={this.state.url === ""}
                     onTouchTap={() => window.open(this.state.url, '_blank')} />
         <FlatButton label="update" onTouchTap={() => console.log("")} />
       </CardActions>
