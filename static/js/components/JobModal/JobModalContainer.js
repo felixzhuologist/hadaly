@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import { addJob } from '../../actions/jobs';
-import AddJobModal from './AddJobModal';
+import JobModal from './JobModal';
 
 const mapStateToProps = (state, ownProps) => ({
 
 });
 
-const AddJobModalContainer = connect(
+const JobModalContainer = connect(
   mapStateToProps,
   { onSubmit: addJob }
-)(AddJobModal);
+)(JobModal);
 
-export default AddJobModalContainer;
+export default JobModalContainer;

@@ -5,6 +5,9 @@ export const stage_type_to_icon = {
   ONSITE: "flight_takeoff",
   ONLINE: "mail_outline",
   RECRUITER: "person",
+  CHALLENGE: "assignment_returned",
+  OFFER: "sentiment_very_satisfied",
+  REJECTION: "sentiment_very_dissatisfied"
 }
 
 export const getStageTitle = (stage) => {

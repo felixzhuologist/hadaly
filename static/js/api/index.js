@@ -28,7 +28,6 @@ export const phoneScreenInfo = {
   interviewer: 'John',
   date: new Date(2016, 9, 13),
   responseDate: new Date(2016, 9, 16),
-  time: '8:30',
   description: 'Quick 1 hour technical phone screen.',
 }
 

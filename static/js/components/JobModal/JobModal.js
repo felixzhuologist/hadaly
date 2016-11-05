@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
-class AddJobModal extends React.Component {
+class JobModal extends React.Component {
   constructor(props) {
     super(props);
     this.defaultState = {
@@ -128,4 +128,4 @@ class AddJobModal extends React.Component {
   }
 }
 
-export default AddJobModal;
+export default JobModal;

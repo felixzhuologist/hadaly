@@ -1,6 +1,6 @@
 import Radium from 'radium';
 import React from 'react';
-import AddJobModal from '../AddJobModal';
+import JobModal from '../JobModal';
 import CompanyCard from '../CompanyCard';
 import * as api from '../../api'
 
@@ -16,7 +16,7 @@ const styles = {
 const Home = ({ jobIds }) => (
   <div style={styles.outerContainer}>
     {jobIds.map(jobId => <CompanyCard jobId={jobId} key={jobId} />)}
-    <AddJobModal />
+    <JobModal />
   </div>
 );
 
