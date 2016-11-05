@@ -1,11 +1,9 @@
 import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
-import TextField from 'material-ui/TextField';
-import DatePicker from 'material-ui/DatePicker';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import Checkbox from 'material-ui/Checkbox';
+
+import ApplyForm from './ApplyForm';
+import StageForm from './StageForm';
 
 
 class StageModal extends React.Component {
@@ -75,44 +73,9 @@ class StageModal extends React.Component {
           modal={false}
           open={this.state.open}
           onRequestClose={this.handleClose}
-        >
-          <div>
-            <DatePicker style={{marginBottom: '10px'}} hintText="When did you hear back?" />
-
-            <Checkbox
-              label="Did you pass?"
-              labelPosition="left"
-              checked={this.state.pass}
-              onCheck={(e, checked) => {this.setState({pass: checked})}}
-            />
-            <br />
-
-            <SelectField
-              floatingLabelText="Next steps:"
-              value={this.state.type}
-              disabled={!this.state.pass}
-              onChange={() => console.log('ay')} 
-            >
-              <MenuItem value={'OFFER'} primaryText="Offer" />
-              <MenuItem value={'PHONE'} primaryText="Phone interview" />
-              <MenuItem value={'ONSITE'} primaryText="Onsite" />
-              <MenuItem value={'CHALLENGE'} primaryText="Coding challenge" />
-            </SelectField>
-            <br />
-
-
-            <DatePicker 
-              hintText="Date" 
-              disabled={!this.state.pass} />
-            <br />
-
-            <TextField 
-              hintText="Interviewer"
-              disabled={!this.state.pass}
-              value={''}
-              onChange={(e) => {}} />
-            <br />           
-          </div>
+          autoScrollBodyContent={true} >
+          <ApplyForm type="ONLINE" />
+          <StageForm type="CHALLENGE" interviewer="" />
         </Dialog>
       </div>
     );
