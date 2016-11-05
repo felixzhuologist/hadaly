@@ -9,8 +9,11 @@ import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
 import IconMenu from 'material-ui/IconMenu';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+
 import StageRow from '../StageRow';
+import StageModal from '../StageModal';
 import { getPresentationProps } from '../../reducers/stages';
+
 
 class CompanyCard extends React.Component {
 
@@ -51,7 +54,7 @@ class CompanyCard extends React.Component {
         <FlatButton label="apply"
                     disabled={this.state.url === ""}
                     onTouchTap={() => window.open(this.state.url, '_blank')} />
-        <FlatButton label="update" onTouchTap={() => console.log("")} />
+        <StageModal />
       </CardActions>
       :
       <div style={{padding: '10px'}}>
