@@ -8,7 +8,7 @@ import TextField from 'material-ui/TextField';
 const StageForm = (props) => (
   <div>
     <SelectField
-      floatingLabelText="Next steps:"
+      floatingLabelText="Next step:"
       value={props.type}
       onChange={(e, k, val) => props.typeOnChange(val)} >
       <MenuItem value={'OFFER'} primaryText="Offer" />

@@ -22,20 +22,17 @@ class JobModal extends React.Component {
       titleUntouched: true
     };
     this.state = this.defaultState
-    this.handleOpen = this.handleOpen.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   };
 
-  handleOpen() {
+  handleOpen = () => {
     this.setState({open: true});
   };
 
-  handleClose() {
+  handleClose = () => {
     this.setState({open: false});
   };
 
-  handleSubmit() {
+  handleSubmit = () => {
     if (this.state.company !== '' && this.state.title !== '') {
       this.props.onSubmit(this.state);
       this.handleClose();
@@ -48,7 +45,7 @@ class JobModal extends React.Component {
     }
   };
 
-  render() {
+  render = () => {
     const actions = [
       <FlatButton
         label="Cancel"

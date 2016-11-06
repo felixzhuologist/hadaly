@@ -54,7 +54,7 @@ class CompanyCard extends React.Component {
         <FlatButton label="apply"
                     disabled={this.state.url === ""}
                     onTouchTap={() => window.open(this.state.url, '_blank')} />
-        <StageModal />
+        <StageModal {...stages} />
       </CardActions>
       :
       <div style={{padding: '10px'}}>

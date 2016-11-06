@@ -30,7 +30,7 @@ const stages = combineReducers({
 
 export const getStagesForJob = (state, jobId) => {
   let stageIds = state.jobs.jobsById[jobId].stages
-  return stageIds.map(id => getPresentationProps(state.stages.stagesById[id]))
+  return stageIds.map(id => state.stages.stagesById[id])
 }
 
 const getPresentationProps = (stages) => {
