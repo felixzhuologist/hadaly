@@ -10,11 +10,10 @@ import StageForm from './StageForm';
 class StageModal extends React.Component {
   constructor(props) {
     super(props);
-    this.defaultState = {
-      ...props,
+    this.state = {
+      stages: props.stages,
       open: false,
     };
-    this.state = this.defaultState
   };
 
   handleOpen = () => {
@@ -28,6 +27,10 @@ class StageModal extends React.Component {
   handleSubmit = () => {
     this.props.onSubmit(this.state);
     this.handleClose();
+  };
+
+  canAddNewStep = () => {
+    return true;
   };
 
   render = () => {
@@ -56,9 +59,11 @@ class StageModal extends React.Component {
           <ApplyForm type="ONLINE" />
           <StageForm type="CHALLENGE" interviewer="" />
           <RaisedButton
+            style={{marginTop: '15px', marginBottom: '5px'}}
             label="add new step"
             fullWidth={true}
-            disabled={false} />
+            disabled={!this.canAddNewStep()} 
+            onTouchTap={() => console.log('pls work')} />
         </Dialog>
       </div>
     );

@@ -3,7 +3,10 @@ import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-const AppForm = (props) => (
+import CloseableForm from './CloseableForm';
+
+
+const AppFormFields = (props) => (
   <div>
     <SelectField
       value={props.type}
@@ -13,7 +16,6 @@ const AppForm = (props) => (
     </SelectField>
     <br />
 
-
     <DatePicker 
       hintText="Date" 
       onChange={(e, date) => props.dateOnChange(date)} />
@@ -22,8 +24,14 @@ const AppForm = (props) => (
     <DatePicker
       hintText="Response on"
       onChange={(e, date) => props.dateOnChange(date)} />
-    <br />     
+    <br />
   </div>
+)
+
+const AppForm = (props) => (
+  <CloseableForm 
+    innerFields={<AppFormFields {...props} />} 
+    onClose={props.onClose} />
 )
 
 export default AppForm

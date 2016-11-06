@@ -4,8 +4,10 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 
+import CloseableForm from './CloseableForm';
 
-const StageForm = (props) => (
+
+const StageFormFields = (props) => (
   <div>
     <SelectField
       floatingLabelText="Next step:"
@@ -34,6 +36,12 @@ const StageForm = (props) => (
       hintText="Response date" 
       onChange={(e, date) => props.responseOnChange(date)} />
   </div>
+)
+
+const StageForm = (props) => (
+  <CloseableForm
+    innerFields={<StageFormFields {...props} />}
+    onClose={props.onClose} />
 )
 
 export default StageForm
