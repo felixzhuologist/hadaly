@@ -34,12 +34,7 @@ const StageFormFields = (props) => {
 
   return (
     <div>
-      <SelectField
-        value={props.type}
-        onChange={(e, k, val) => props.typeOnChange(val)} >
-        <MenuItem value={'ONLINE'} primaryText="Applied Online" />
-        <MenuItem value={'RECRUITER'} primaryText="Contacted by recruiter" />
-      </SelectField>
+      {typeOptions}
       <br />
 
       <DatePicker 
