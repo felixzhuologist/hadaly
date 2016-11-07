@@ -90,7 +90,7 @@ class CompanyCard extends React.Component {
       targetOrigin={{horizontal: 'right', vertical: 'top'}}
       style={{position: 'absolute', top: '5px', right: '10px'}}
     >
-      <MenuItem primaryText="Edit" />
+      <MenuItem primaryText="Edit" onTouchTap={this.handleStageModalOpen} />
       <MenuItem primaryText="Delete" />
     </IconMenu>
 
