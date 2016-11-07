@@ -3,7 +3,6 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import ApplyForm from './ApplyForm';
 import StageForm from './StageForm';
 
 
@@ -60,7 +59,7 @@ class StageModal extends React.Component {
     ]
 
     const editForms = this.state.stages.map((stage, index) =>
-      <ApplyForm {...stage} index={index} />)
+      <StageForm {...stage} index={index} />)
 
     return (
       <div style={{display: 'inline-block'}} >

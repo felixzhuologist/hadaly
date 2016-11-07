@@ -4,10 +4,10 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 
-import CloseableForm from './CloseableForm';
+import CloseableForm from '../CloseableForm';
 
 
-const AppFormFields = (props) => {
+const StageFormFields = (props) => {
   let typeOptions = props.index === 0 ?
     <SelectField
       value={props.type}
@@ -55,10 +55,10 @@ const AppFormFields = (props) => {
   )
 }
 
-const AppForm = (props) => (
+const StageForm = (props) => (
   <CloseableForm 
-    innerFields={<AppFormFields {...props} />} 
+    innerFields={<StageFormFields {...props} />} 
     onClose={props.onClose} />
 )
 
-export default AppForm
+export default StageForm
