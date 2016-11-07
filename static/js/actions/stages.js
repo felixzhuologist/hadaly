@@ -5,3 +5,9 @@ export const addStage = (params) => ({
   type: 'ADD_STAGE',
   stageId: v4()
 });
+
+export const updateStage = (stageId, newStageInfo) => ({
+  type: 'UPDATE_STAGE',
+  stageId,
+  newStageInfo,
+})

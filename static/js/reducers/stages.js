@@ -5,6 +5,7 @@ import {getStageTitle, getStageSubtitle, stage_type_to_icon} from './stagePresen
 const stagesById = (state = {}, action) => {
   switch (action.type) {
     case 'ADD_STAGE':
+    case 'UPDATE_STAGE':
       return {
         ...state,
         [action.stageId]: stage(state[action.stageId], action)

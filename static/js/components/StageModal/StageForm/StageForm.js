@@ -49,7 +49,7 @@ const StageFormFields = (props) => {
 
       <DatePicker
         hintText="Response date"
-        onChange={(e, date) => props.dateOnChange(date)} />
+        onChange={(e, date) => props.responseDateOnChange(date)} />
       <br />
     </div>
   )

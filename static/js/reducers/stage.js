@@ -9,6 +9,11 @@ const state = (state, action) => {
         responseDate: action.responseDate,
         notes: action.notes,
       }
+    case 'UPDATE_STAGE':
+      return {
+        ...state,
+        ...action.newStageInfo
+      }
     default:
       return state
   }

@@ -16,19 +16,11 @@ class StageModal extends React.Component {
 
   componentWillReceiveProps = (nextProps) => {
     this.setState(nextProps)
-  }
-
-  handleOpen = () => {
-    this.setState({open: true});
-  };
-
-  handleClose = () => {
-    this.setState({open: false});
   };
 
   handleSubmit = () => {
     this.props.onSubmit(this.state);
-    this.state.handleClose();
+    this.state.closeModal();
   };
 
   canAddNewStep = () => {
@@ -48,18 +40,13 @@ class StageModal extends React.Component {
   render = () => {
     const actions = [
       <FlatButton
-        label="Cancel"
+        label="Close"
         primary={true}
-        onTouchTap={this.state.handleClose} />,
-      <FlatButton
-        label="Add"
-        primary={true}
-        keyboardFocused={true}
-        onTouchTap={this.handleSubmit} />
+        onTouchTap={this.state.closeModal} />,
     ]
 
     const editForms = this.state.stages.map((stage, index) =>
-      <StageForm {...stage} index={index} />)
+      <StageForm {...stage} index={index} key={stage.stageId} />)
 
     return (
       <div style={{display: 'inline-block'}} >
@@ -68,7 +55,7 @@ class StageModal extends React.Component {
           actions={actions}
           modal={false}
           open={this.state.open}
-          onRequestClose={this.state.handleClose}
+          onRequestClose={this.state.closeModal}
           autoScrollBodyContent={true} >
           {editForms}
           <RaisedButton
