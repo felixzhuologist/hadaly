@@ -5,7 +5,7 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 const styles = {
   container: {
-    marginTop: '15px',
+    marginTop: '25px',
     position: 'relative'
   },
   iconDiv: {
@@ -15,7 +15,7 @@ const styles = {
   iconButton: {
     float: 'right',
     position: 'absolute',
-    top: '-15px',
+    top: '-25px',
     right: '-10px',
   },
   iconDiv: {

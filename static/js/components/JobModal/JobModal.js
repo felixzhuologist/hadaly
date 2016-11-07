@@ -58,16 +58,22 @@ class JobModal extends React.Component {
         onTouchTap={this.handleSubmit} />
     ]
 
-    const floatingButtonStyles = {
-      position: 'fixed',
-      bottom: '15%',
-      left: '50%',
-      transform: 'translate(-50%)'
+    const styles = {
+      floatingButtonStyles: {
+        position: 'fixed',
+        bottom: '15%',
+        left: '50%',
+        transform: 'translate(-50%)'
+      },
+      fieldStyle: {
+        width: '100%',
+        textOverfow: 'ellipsis',
+      },
     }
 
     return (
       <div>
-        <FloatingActionButton style={floatingButtonStyles} 
+        <FloatingActionButton style={styles.floatingButtonStyles} 
                               onTouchTap={this.handleOpen} >
           <ContentAdd />
         </FloatingActionButton>
@@ -88,7 +94,8 @@ class JobModal extends React.Component {
               value={this.state.company}
               onChange={(e) => {this.setState({
                 company: e.target.value, 
-                companyUntouched: false})}} />
+                companyUntouched: false})}}
+              style={styles.fieldStyle} />
             <br />
             Job Title: 
             <TextField 
@@ -99,25 +106,29 @@ class JobModal extends React.Component {
                 "This field is required" : null}
               onChange={(e) => {this.setState({
                 title: e.target.value, 
-                titleUntouched: false})}} />
+                titleUntouched: false})}} 
+              style={styles.fieldStyle} />
             <br />
             URL: 
             <TextField 
               hintText="http://www.hooli.xyz/jobs/swe"
               value={this.state.url}
-              onChange={(e) => {this.setState({url: e.target.value})}} />
+              onChange={(e) => {this.setState({url: e.target.value})}} 
+              style={styles.fieldStyle} />
             <br />
             Contact:
             <TextField 
               hintText="gbels@hoolimail.xyz"
               value={this.state.contact}
-              onChange={(e) => {this.setState({contact: e.target.value})}} />
+              onChange={(e) => {this.setState({contact: e.target.value})}} 
+              style={styles.fieldStyle} />
             <br />
             Notes:
             <TextField 
               hintText="Super innovative company"
               value={this.state.notes}
               onChange={(e) => {this.setState({notes: e.target.value})}}
+              style={styles.fieldStyle}
               multiLine={true} />
             <br />
           </div>

@@ -6,19 +6,29 @@ import TextField from 'material-ui/TextField';
 
 import CloseableForm from '../CloseableForm';
 
+const styles = {
+  fieldStyle: {
+    width: '80%',
+    overflow: 'hidden',
+    margin: 'auto',
+  },
+  selectStyle: {
+    left: '10%',
+  }
+}
 
 const StageFormFields = (props) => {
   let typeOptions = props.index === 0 ?
-    <SelectField
-      value={props.type}
-      onChange={(e, k, val) => props.typeOnChange(val)} >
+    <SelectField value={props.type}
+                  onChange={(e, k, val) => props.typeOnChange(val)} 
+                  style={Object.assign({}, styles.fieldStyle, styles.selectStyle)} >
       <MenuItem value={'ONLINE'} primaryText="Applied Online" />
       <MenuItem value={'RECRUITER'} primaryText="Contacted by recruiter" />
     </SelectField> :
-    <SelectField
-      floatingLabelText="Next step:"
-      value={props.type}
-      onChange={(e, k, val) => props.typeOnChange(val)} >
+    <SelectField floatingLabelText="Next step:"
+                  value={props.type}
+                  onChange={(e, k, val) => props.typeOnChange(val)} 
+                  style={Object.assign({}, styles.fieldStyle, styles.selectStyle)} >
       <MenuItem value={'OFFER'} primaryText="Offer" />
       <MenuItem value={'PHONE'} primaryText="Phone interview" />
       <MenuItem value={'ONSITE'} primaryText="Onsite" />
@@ -30,6 +40,7 @@ const StageFormFields = (props) => {
     <TextField 
       hintText="Interviewer"
       value={props.interviewer}
+      style={styles.fieldStyle}
       onChange={(e, val) => props.interviewerOnChange(val)} />
 
   return (
@@ -39,11 +50,15 @@ const StageFormFields = (props) => {
 
       <DatePicker 
         hintText="Date" 
+        defaultDate={props.date}
+        style={styles.fieldStyle}
         onChange={(e, date) => props.dateOnChange(date)} />
       <br />
 
       <DatePicker
         hintText="Response date"
+        defaultDate={props.responseDate}
+        style={styles.fieldStyle}
         onChange={(e, date) => props.responseDateOnChange(date)} />
       <br />
     </div>
