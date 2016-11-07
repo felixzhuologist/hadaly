@@ -17,6 +17,8 @@ const styles = {
   }
 }
 
+const dateInFuture = (date) => date > (new Date())
+
 const StageFormFields = (props) => {
   let typeOptions = props.index === 0 ?
     <SelectField value={props.type}
@@ -52,14 +54,16 @@ const StageFormFields = (props) => {
         hintText="Date" 
         defaultDate={props.date}
         style={styles.fieldStyle}
-        onChange={(e, date) => props.dateOnChange(date)} />
+        onChange={(e, date) => props.dateOnChange(date)} 
+        shouldDisableDate={dateInFuture} />
       <br />
 
       <DatePicker
         hintText="Response date"
-        defaultDate={props.responseDate}
         style={styles.fieldStyle}
-        onChange={(e, date) => props.responseDateOnChange(date)} />
+        defaultDate={props.date}
+        onChange={(e, date) => props.responseDateOnChange(date)} 
+        shouldDisableDate={(date) => date < props.date || dateInFuture(date)}  />
       <br />
     </div>
   )
