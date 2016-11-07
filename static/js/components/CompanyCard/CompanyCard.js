@@ -95,7 +95,8 @@ class CompanyCard extends React.Component {
     </IconMenu>
 
     const stages = this.state.expanded && this.state.stages.length > 0 ?
-      getPresentationProps(this.state.stages).map(stage => <StageRow {...stage} />) :
+      getPresentationProps(this.state.stages).map(stage => 
+        <StageRow {...stage} key={stage.stageId} />) :
       null
 
     const styles = {

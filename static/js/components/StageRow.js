@@ -28,7 +28,7 @@ const styles = {
   title: {
     width: '100%',
     height: '25%',
-    fontSize: '16',
+    fontSize: '16px',
     marginTop: '10%'
   },
   subtitle: {
