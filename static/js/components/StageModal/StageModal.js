@@ -12,13 +12,10 @@ class StageModal extends React.Component {
     super(props);
     this.state = {
       ...props,
-      open: false,
     };
   };
 
   componentWillReceiveProps = (nextProps) => {
-    console.log('receiving props')
-    console.log(nextProps)
     this.setState(nextProps)
   }
 
@@ -32,7 +29,7 @@ class StageModal extends React.Component {
 
   handleSubmit = () => {
     this.props.onSubmit(this.state);
-    this.handleClose();
+    this.state.handleClose();
   };
 
   canAddNewStep = () => {
@@ -54,7 +51,7 @@ class StageModal extends React.Component {
       <FlatButton
         label="Cancel"
         primary={true}
-        onTouchTap={this.handleClose} />,
+        onTouchTap={this.state.handleClose} />,
       <FlatButton
         label="Add"
         primary={true}
@@ -67,13 +64,12 @@ class StageModal extends React.Component {
 
     return (
       <div style={{display: 'inline-block'}} >
-        <FlatButton label="update" onTouchTap={() => this.handleOpen()} />
         <Dialog
           title="Update for Google SWE"
           actions={actions}
           modal={false}
           open={this.state.open}
-          onRequestClose={this.handleClose}
+          onRequestClose={this.state.handleClose}
           autoScrollBodyContent={true} >
           {editForms}
           <RaisedButton

@@ -21,12 +21,12 @@ class CompanyCard extends React.Component {
     super(props);
     this.state = {
       ...props,
-      expanded: false
+      expanded: false,
+      stageModalOpen: false,
     }
   }
 
   componentWillReceiveProps = (nextProps) => {
-    console.log('receiving company props')
     this.setState(nextProps)
   }
 
@@ -50,6 +50,14 @@ class CompanyCard extends React.Component {
     }
   }
 
+  handleStageModalOpen = () => {
+    this.setState({ stageModalOpen: true });
+  }
+
+  hanldeStageModalClose = () => {
+    this.setState({ stageModalOpen: false });
+  }
+
   render() {
     const footerAction = !this.state.expanded ?
       <FontIcon className="material-icons">expand_more</FontIcon> :
@@ -60,7 +68,8 @@ class CompanyCard extends React.Component {
         <FlatButton label="apply"
                     disabled={this.state.url === ""}
                     onTouchTap={() => window.open(this.state.url, '_blank')} />
-        <StageModal stages={this.state.stages} jobId={this.state.jobId} />
+        <FlatButton label="update" 
+                    onTouchTap={this.handleStageModalOpen} />
       </CardActions>
       :
       <div style={{padding: '10px'}}>
@@ -104,6 +113,12 @@ class CompanyCard extends React.Component {
         expanded={this.state.expanded} 
         onExpandChange={this.handleExpandChange}
         style={styles.cardStyles} >
+        <StageModal 
+          stages={this.state.stages}
+          jobId={this.state.jobId} 
+          open={this.state.stageModalOpen} 
+          openModal={this.handleStageModalOpen} 
+          closeModal={this.hanldeStageModalClose} />
         <CardHeader
           avatar={this.state.profile}
           title={<div className="title"> {this.state.position} {dropDown} </div>}
