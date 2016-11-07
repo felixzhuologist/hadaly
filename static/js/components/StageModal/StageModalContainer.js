@@ -3,7 +3,7 @@ import { addStage } from '../../actions/stages';
 import StageModal from './StageModal';
 
 const mapStateToProps = (state, ownProps) => ({
-
+  ...ownProps,
 });
 
 const StageModalContainer = connect(

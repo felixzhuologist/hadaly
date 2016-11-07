@@ -7,7 +7,7 @@ const stagesById = (state = {}, action) => {
     case 'ADD_STAGE':
       return {
         ...state,
-        [action.id]: stage(state[action.id], action)
+        [action.stageId]: stage(state[action.stageId], action)
       }
     default:
       return state;
@@ -33,7 +33,7 @@ export const getStagesForJob = (state, jobId) => {
   return stageIds.map(id => state.stages.stagesById[id])
 }
 
-const getPresentationProps = (stages) => {
+export const getPresentationProps = (stages) => {
   return stages.map(stage => ({
     stageTitle: getStageTitle(stage),
     timeSubtitle: getStageSubtitle(stage),

@@ -11,10 +11,16 @@ class StageModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stages: props.stages,
+      ...props,
       open: false,
     };
   };
+
+  componentWillReceiveProps = (nextProps) => {
+    console.log('receiving props')
+    console.log(nextProps)
+    this.setState(nextProps)
+  }
 
   handleOpen = () => {
     this.setState({open: true});
@@ -33,6 +39,16 @@ class StageModal extends React.Component {
     return true;
   };
 
+  handleAdd = () => {
+    this.state.onSubmit({
+      id: this.state.jobId,
+      stageType: this.state.stages.length === 0 ? "ONLINE" : "PHONE",
+      date: new Date(),
+      interviewer: this.state.stages.length === 0 ? null : "",
+      responseDate: new Date()
+    })
+  };
+
   render = () => {
     const actions = [
       <FlatButton
@@ -46,6 +62,9 @@ class StageModal extends React.Component {
         onTouchTap={this.handleSubmit} />
     ]
 
+    const editForms = this.state.stages.map((stage, index) =>
+      <ApplyForm {...stage} index={index} />)
+
     return (
       <div style={{display: 'inline-block'}} >
         <FlatButton label="update" onTouchTap={() => this.handleOpen()} />
@@ -56,14 +75,13 @@ class StageModal extends React.Component {
           open={this.state.open}
           onRequestClose={this.handleClose}
           autoScrollBodyContent={true} >
-          <ApplyForm type="ONLINE" />
-          <StageForm type="CHALLENGE" interviewer="" />
+          {editForms}
           <RaisedButton
             style={{marginTop: '15px', marginBottom: '5px'}}
             label="add new step"
             fullWidth={true}
             disabled={!this.canAddNewStep()} 
-            onTouchTap={() => console.log('pls work')} />
+            onTouchTap={this.handleAdd} />
         </Dialog>
       </div>
     );

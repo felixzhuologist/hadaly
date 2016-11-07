@@ -19,9 +19,15 @@ class CompanyCard extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = Object.assign({}, props, {
+    this.state = {
+      ...props,
       expanded: false
-    })
+    }
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    console.log('receiving company props')
+    this.setState(nextProps)
   }
 
   handleExpandChange = (expanded) => {
@@ -54,7 +60,7 @@ class CompanyCard extends React.Component {
         <FlatButton label="apply"
                     disabled={this.state.url === ""}
                     onTouchTap={() => window.open(this.state.url, '_blank')} />
-        <StageModal stages={stages} />
+        <StageModal stages={this.state.stages} jobId={this.state.jobId} />
       </CardActions>
       :
       <div style={{padding: '10px'}}>

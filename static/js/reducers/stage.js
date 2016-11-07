@@ -2,11 +2,11 @@ const state = (state, action) => {
   switch (action.type) {
     case 'ADD_STAGE':
       return {
-        id: action.stageId,
-        type: action.type,
+        stageId: action.stageId,
+        type: action.stageType,
         interviewer: action.interviewer,
         date: action.date,
-        time: action.time,
+        responseDate: action.responseDate,
         notes: action.notes,
       }
     default:

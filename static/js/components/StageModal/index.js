@@ -1,3 +1,3 @@
-import { default as StageModal } from './StageModal'
+import { default as StageModal } from './StageModalContainer'
 
 export default StageModal
