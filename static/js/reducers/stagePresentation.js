@@ -21,6 +21,10 @@ export const getStageTitle = (stage) => {
       return "Applied online"
     case 'RECRUITER':
       return 'Contacted by recruiter'
+    case 'OFFER':
+      return 'Received offer'
+    case 'REJECTION':
+      return 'Received rejection'
     default:
       throw "Unknown stage type!"
   }
