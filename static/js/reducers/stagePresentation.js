@@ -25,8 +25,10 @@ export const getStageTitle = (stage) => {
       return 'Received offer'
     case 'REJECTION':
       return 'Received rejection'
+    case 'CHALLENGE':
+      return 'Did coding challenge'
     default:
-      throw "Unknown stage type!"
+      throw `Unknown stage type ${stage.type}!`
   }
 }
 
