@@ -54,8 +54,7 @@ const StageFormFields = (props) => {
         hintText="Date" 
         defaultDate={props.date}
         style={styles.fieldStyle}
-        onChange={(e, date) => props.dateOnChange(date)} 
-        shouldDisableDate={dateInFuture} />
+        onChange={(e, date) => props.dateOnChange(date)} />
       <br />
 
       <DatePicker
