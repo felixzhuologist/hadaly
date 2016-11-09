@@ -33,7 +33,7 @@ class StageModal extends React.Component {
       stageType: this.state.stages.length === 0 ? "ONLINE" : "PHONE",
       date: new Date(),
       interviewer: this.state.stages.length === 0 ? null : "",
-      responseDate: new Date()
+      responseDate: null
     })
   };
 

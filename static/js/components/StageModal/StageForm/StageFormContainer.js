@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import StageForm from './StageForm';
 import { updateStage } from '../../../actions/stages';
+import { isUnaryStage } from '../../../reducers/stages';
 
 const mapStateToProps = (state, ownProps) => ({
   ...ownProps,
-  checked: ownProps.responseDate !== null
+  checked: ownProps.responseDate !== null,
+  isUnaryStage: isUnaryStage(ownProps)
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

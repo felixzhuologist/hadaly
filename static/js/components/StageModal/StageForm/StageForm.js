@@ -7,6 +7,7 @@ import Checkbox from 'material-ui/Checkbox';
 
 import CloseableForm from '../CloseableForm';
 
+
 const styles = {
   fieldStyle: {
     width: '80%',
@@ -21,7 +22,9 @@ const styles = {
 const dateInFuture = (date) => date > (new Date())
 
 const StageFormFields = (props) => {
-  let typeOptions = props.index === 0 ?
+  console.log(props.responseDate);
+
+  const typeOptions = props.index === 0 ?
     <SelectField value={props.type}
                   onChange={(e, k, val) => props.typeOnChange(val)} 
                   style={Object.assign({}, styles.fieldStyle, styles.selectStyle)} >
@@ -39,12 +42,29 @@ const StageFormFields = (props) => {
       <MenuItem value={'REJECTION'} primaryText="Rejection" />
     </SelectField>
 
-  let interviewerField = props.index === 0 ? null :
+  const interviewerField = props.index === 0 ? null :
     <TextField 
       hintText="Interviewer"
       value={props.interviewer}
       style={styles.fieldStyle}
       onChange={(e, val) => props.interviewerOnChange(val)} />
+
+  const responseDateField = props.isUnaryStage ? null :
+    <div>
+      <Checkbox label="Heard back?"
+                labelPosition="left" 
+                checked={props.checked}
+                onCheck={(e, isChecked) => props.checkedOnChange(isChecked)} />
+
+      On:
+      <DatePicker
+        hintText="Response date"
+        style={styles.fieldStyle}
+        disabled={!props.checked}
+        onChange={(e, date) => props.responseDateOnChange(date)} 
+        shouldDisableDate={(date) => date < props.date || dateInFuture(date)}  />
+      <br />
+    </div>
 
   return (
     <div>
@@ -63,20 +83,7 @@ const StageFormFields = (props) => {
         }} />
       <br />
 
-      <Checkbox label="Heard back?"
-                labelPosition="left" 
-                checked={props.checked}
-                onCheck={(e, isChecked) => props.checkedOnChange(isChecked)} />
-
-      On:
-      <DatePicker
-        hintText="Response date"
-        style={styles.fieldStyle}
-        defaultDate={props.date}
-        disabled={!props.checked}
-        onChange={(e, date) => props.responseDateOnChange(date)} 
-        shouldDisableDate={(date) => date < props.date || dateInFuture(date)}  />
-      <br />
+      {responseDateField}
     </div>
   )
 }

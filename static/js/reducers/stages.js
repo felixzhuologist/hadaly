@@ -29,6 +29,10 @@ const stages = combineReducers({
   allStageIds
 });
 
+export const isUnaryStage = (stage) => {
+  return stage.type == 'RECRUITER' || stage.type == 'OFFER' || stage.type == 'REJECTION'
+}
+
 export const getStagesForJob = (state, jobId) => {
   let stageIds = state.jobs.jobsById[jobId].stages
   return stageIds.map(id => state.stages.stagesById[id])

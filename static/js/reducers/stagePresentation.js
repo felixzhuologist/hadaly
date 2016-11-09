@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { isUnaryStage } from './stages';
 
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
@@ -34,7 +35,7 @@ export const getStageTitle = (stage) => {
   }
 }
 
-export const getStageSubtitle = (stage) => (stage.type == 'RECRUITER' ?
+export const getStageSubtitle = (stage) => (isUnaryStage(stage) ?
   `on ${stage.date.toLocaleDateString()}` :
   getTimeMessage(stage)
 )
@@ -45,6 +46,6 @@ const getTimeMessage = (stage) => (stage.responseDate === null ?
 )
 
 const getNoResponseMsg = (stage) => (stage.date > new Date() ?
-  moment(stage.date).toNow() :
-  moment(stage.date).fromNow()
+  moment(stage.date).fromNow() :
+  moment(stage.date).toNow()
 )
