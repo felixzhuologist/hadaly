@@ -22,7 +22,6 @@ const styles = {
 const dateInFuture = (date) => date > (new Date())
 
 const StageFormFields = (props) => {
-  console.log(props.responseDate);
 
   const typeOptions = props.index === 0 ?
     <SelectField value={props.type}

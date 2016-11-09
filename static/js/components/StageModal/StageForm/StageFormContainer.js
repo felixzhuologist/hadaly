@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(updateStage(ownProps.stageId, {date: date}))
   },
   responseDateOnChange(date) {
+    console.log('date changed??')
     dispatch(updateStage(ownProps.stageId, {responseDate: date}))
   },
   checkedOnChange(isChecked) {
