@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
 export const stage_type_to_icon = {
@@ -39,16 +41,10 @@ export const getStageSubtitle = (stage) => (stage.type == 'RECRUITER' ?
 
 const getTimeMessage = (stage) => (stage.responseDate === null ?
   getNoResponseMsg(stage) :
-  `Received response in ${daysBetween(stage.date, stage.responseDate)} days`
+  `Received response ${moment(stage.responseDate).from(moment(stage.date))}`
 )
 
 const getNoResponseMsg = (stage) => (stage.date > new Date() ?
-  `in ${daysUntil(stage.date)} days` :
-  `${daysSince(stage.date)} days ago`
+  moment(stage.date).toNow() :
+  moment(stage.date).fromNow()
 )
-
-const daysBetween = (date1, date2) => Math.floor((date2 - date1) / MS_PER_DAY)
-
-const daysSince = (date) => daysBetween(date, new Date())
-
-const daysUntil = (date) => daysBetween(new Date(), date)
