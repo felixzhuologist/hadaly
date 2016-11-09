@@ -4,6 +4,7 @@ import { updateStage } from '../../../actions/stages';
 
 const mapStateToProps = (state, ownProps) => ({
   ...ownProps,
+  checked: ownProps.responseDate !== null
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -17,7 +18,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(updateStage(ownProps.stageId, {date: date}))
   },
   responseDateOnChange(date) {
-    dispatch(updateStage(ownProps.stageid, {responseDate: date}))
+    dispatch(updateStage(ownProps.stageId, {responseDate: date}))
+  },
+  checkedOnChange(isChecked) {
+    dispatch(updateStage(ownProps.stageId, 
+                          {responseDate: isChecked ? new Date() : null}))
   }
 })
 

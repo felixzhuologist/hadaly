@@ -3,6 +3,7 @@ import DatePicker from 'material-ui/DatePicker';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
+import Checkbox from 'material-ui/Checkbox';
 
 import CloseableForm from '../CloseableForm';
 
@@ -50,17 +51,29 @@ const StageFormFields = (props) => {
       {typeOptions}
       <br />
 
+      On: 
       <DatePicker 
         hintText="Date" 
         defaultDate={props.date}
         style={styles.fieldStyle}
-        onChange={(e, date) => props.dateOnChange(date)} />
+        onChange={(e, date) => props.dateOnChange(date)}
+        shouldDisableDate={(date) => {
+          let isInitialStage = props.type == 'ONLINE' || props.type == 'RECRUITER'
+          return isInitialStage && dateInFuture(date)
+        }} />
       <br />
 
+      <Checkbox label="Heard back?"
+                labelPosition="left" 
+                checked={props.checked}
+                onCheck={(e, isChecked) => props.checkedOnChange(isChecked)} />
+
+      On:
       <DatePicker
         hintText="Response date"
         style={styles.fieldStyle}
         defaultDate={props.date}
+        disabled={!props.checked}
         onChange={(e, date) => props.responseDateOnChange(date)} 
         shouldDisableDate={(date) => date < props.date || dateInFuture(date)}  />
       <br />
