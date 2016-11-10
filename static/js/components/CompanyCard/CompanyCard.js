@@ -119,7 +119,9 @@ class CompanyCard extends React.Component {
           jobId={this.state.jobId} 
           open={this.state.stageModalOpen} 
           openModal={this.handleStageModalOpen} 
-          closeModal={this.hanldeStageModalClose} />
+          closeModal={this.hanldeStageModalClose} 
+          company={this.state.company}
+          position={this.state.position} />
         <CardHeader
           avatar={this.state.profile}
           title={<div className="title"> {this.state.position} {dropDown} </div>}

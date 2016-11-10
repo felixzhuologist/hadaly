@@ -15,7 +15,7 @@ const stagesById = (state = {}, action) => {
         [action.stageId]: stage(state[action.stageId], action)
       }
     case 'DELETE_JOB':
-      return omit(state, ...action.stageIds)
+      return omit(state, action.stageIds)
     default:
       return state;
   }

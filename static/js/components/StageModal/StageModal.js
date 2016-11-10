@@ -51,7 +51,7 @@ class StageModal extends React.Component {
     return (
       <div style={{display: 'inline-block'}} >
         <Dialog
-          title="Update for Google SWE"
+          title={`Update for ${this.state.company} ${this.state.position}`}
           actions={actions}
           modal={false}
           open={this.state.open}
