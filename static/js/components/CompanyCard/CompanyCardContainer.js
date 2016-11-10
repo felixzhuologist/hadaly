@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CompanyCard from './CompanyCard';
 import { getStagesForJob } from '../../reducers/stages'
+import { deleteJob } from '../../actions/jobs'
 
 const mapStateToProps = (state, ownProps) => {
   let jobId = ownProps.jobId
@@ -12,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const CompanyCardContainer = connect(
   mapStateToProps,
-  {}
+  { deleteJob }
 )(CompanyCard);
 
 export default CompanyCardContainer

@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
+import omit from 'lodash/omit';
+import without from 'lodash/without';
+
 import stage from './stage'
 import {getStageTitle, getStageSubtitle, stage_type_to_icon} from './stagePresentation'
+
 
 const stagesById = (state = {}, action) => {
   switch (action.type) {
@@ -10,6 +14,8 @@ const stagesById = (state = {}, action) => {
         ...state,
         [action.stageId]: stage(state[action.stageId], action)
       }
+    case 'DELETE_JOB':
+      return omit(state, ...action.stageIds)
     default:
       return state;
   }
@@ -19,6 +25,8 @@ const allStageIds = (state = [], action) => {
   switch (action.type) {
     case 'ADD_STAGE':
       return [...state, action.stageId]
+    case 'DELETE_JOB':
+      return without(state, ...action.stageIds)
     default:
       return state;
   }

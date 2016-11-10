@@ -91,7 +91,7 @@ class CompanyCard extends React.Component {
       style={{position: 'absolute', top: '5px', right: '10px'}}
     >
       <MenuItem primaryText="Edit" onTouchTap={this.handleStageModalOpen} />
-      <MenuItem primaryText="Delete" />
+      <MenuItem primaryText="Delete" onTouchTap={() => this.state.deleteJob(this.state)} />
     </IconMenu>
 
     const stages = this.state.expanded && this.state.stages.length > 0 ?

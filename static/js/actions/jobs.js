@@ -5,3 +5,9 @@ export const addJob = (params) => ({
   type: 'ADD_JOB',
   id: v4()
 });
+
+export const deleteJob = (job) => ({
+  type: 'DELETE_JOB',
+  id: job.jobId,
+  stageIds: job.stages.map(stage => stage.stageId)
+})

@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/felixzhuologist/hadaly",
   "dependencies": {
+    "lodash": "^4.16.6",
     "material-ui": "^0.16.1",
     "moment": "^2.15.2",
     "node-uuid": "^1.4.7",
